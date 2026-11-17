@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYUSH | Business, Finance & Data Analytics Portfolio</title>
+  <meta name="description" content="Portfolio of AYUSH — Undergraduate student pursuing B.Com (Hons.) Data Analytics at GNDU and BBA in Digital Business & Entrepreneurship at IIM Bangalore.">
+  
+  <!-- Open Graph & Social Sharing -->
+  <meta property="og:title" content="AYUSH | Business, Finance & Data Analytics">
+  <meta property="og:description" content="Undergraduate student at IIM Bangalore & GNDU. Turning business questions into structured solutions.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="profile.png">
+  <meta name="theme-color" content="#06090e">
+
+  <!-- Typography: Plus Jakarta Sans (Grotesque Body) & JetBrains Mono (Data/Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-accent="cyan">
+
+  <!-- Reading Progress Indicator -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+  <!-- Ambient Interactive Canvas (Clean, Subtle Particles) -->
+  <canvas id="bgCanvas" class="bg-canvas"></canvas>
+
+  <!-- Confetti Canvas for Celebrations -->
+  <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+  <!-- Architectural Grid Texture -->
+  <div class="cutting-mat-grid"></div>
+
+  <!-- Mouse Spotlight Glow -->
+  <div id="mouseGlow" class="mouse-glow"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-monogram">AY</span>
+        <span class="brand-text">AYUSH</span>
+      </a>
+
+      <div class="nav-actions">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#leadership" class="nav-link">Leadership</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#interests" class="nav-link">Interests</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <button class="btn btn-sm btn-outline" id="printBtn" title="Print ATS-friendly Resume">
+            <i class="fa-solid fa-file-pdf"></i> Resume / PDF
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero-section">
+    <div class="container hero-container">
+      
+      <!-- Hero Left: Narrative & Identity -->
+      <div class="hero-content reveal">
+        <div class="status-badge" id="heroBadge">
+          <span class="status-dot"></span>
+          <span>IIM Bangalore BBA (DBE) • GNDU B.Com (Hons.)</span>
+        </div>
+
+        <h1 class="hero-title">
+          I turn business questions into 
+          <span class="highlight-word">
+            structured solutions.
+            <svg class="wavy-underline" viewBox="0 0 300 20" preserveAspectRatio="none">
+              <path d="M 0,10 Q 37.5,0 75,10 Q 112.5,20 150,10 Q 187.5,0 225,10 Q 262.5,20 300,10" />
+            </svg>
+          </span>
+        </h1>
+
+        <div class="hero-role-wrapper">
+          <span class="role-static">Specializing in </span>
+          <span class="role-dynamic" id="typingText"></span>
+          <span class="cursor">|</span>
+        </div>
+
+        <p class="hero-description">
+          Undergraduate student pursuing <strong>B.Com (Hons.) in Data Analytics at Guru Nanak Dev University</strong> and <strong>BBA in Digital Business & Entrepreneurship at IIM Bangalore</strong>. Focused on financial expansion modelling, corporate strategy, and data-driven decision making.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary laser-btn">
+            <i class="fa-solid fa-arrow-down"></i> Explore Case Studies
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fa-solid fa-paper-plane"></i> Get in Touch
+          </a>
+          <button class="btn btn-outline copy-email-btn" id="copyHeroEmailBtn" title="Copy email address">
+            <i class="fa-solid fa-copy"></i> <span id="copyHeroEmailText">Copy Email</span>
+          </button>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn Profile" title="Connect on LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub Profile" title="View GitHub Repositories">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="mailto:ayush23021@gmail.com" class="social-icon" aria-label="Email Ayush" title="Send Direct Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Right: Refined 3D Executive Profile Card -->
+      <div class="hero-badge-column reveal reveal-delay-2">
+        <div class="profile-card-wrapper" id="profileCardWrapper">
+          <div class="id-badge-card" id="idBadgeCard" title="Click to flip badge">
+            
+            <!-- Front Face: Portrait & Key Credentials -->
+            <div class="id-badge-face id-badge-front">
+              <div class="badge-header-row">
+                <span class="badge-inst">IIM BANGALORE & GNDU</span>
+                <span class="badge-year-tag">CLASS OF '29</span>
+              </div>
+              <div class="badge-photo-wrapper">
+                <img src="profile.png" alt="AYUSH" class="badge-photo">
+                <div class="badge-verified-pill"><i class="fa-solid fa-shield-halved"></i> VERIFIED CANDIDATE</div>
+              </div>
+              <div class="badge-body">
+                <h2 class="badge-name">AYUSH</h2>
+                <p class="badge-program">Business & Data Analytics</p>
+                <div class="badge-meta-pills">
+                  <span><i class="fa-solid fa-location-dot"></i> Amritsar, Punjab, India</span>
+                  <span><i class="fa-solid fa-trophy"></i> Top 10 MITTI Finalist @ IIMB</span>
+                </div>
+              </div>
+              <div class="badge-footer">
+                <div class="badge-barcode"></div>
+                <span class="flip-hint"><i class="fa-solid fa-repeat"></i> Click to flip</span>
+              </div>
+            </div>
+
+            <!-- Back Face: Quick Connect & Location Clock -->
+            <div class="id-badge-face id-badge-back">
+              <div class="badge-back-content">
+                <div class="back-avatar-mini">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <h3>Let's Connect</h3>
+                <p>Open for Analyst Internships, Case Collaborations & Business Engagements.</p>
+                <div class="badge-back-actions">
+                  <a href="mailto:ayush23021@gmail.com" class="btn btn-sm btn-primary">
+                    <i class="fa-solid fa-envelope"></i> Email Me
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
+                    <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                  </a>
+                </div>
+                <div class="live-clock-badge">
+                  <i class="fa-solid fa-clock"></i> <span id="liveAmritsarTimeBadge">Amritsar: Loading...</span>
+                </div>
+                <span class="flip-hint"><i class="fa-solid fa-repeat"></i> Click to flip back</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Executive Summary (About Me) Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Executive Summary</span>
+        <h2 class="section-title">
+          About 
+          <span class="highlight-word">
+            Me
+            <svg class="wavy-underline" viewBox="0 0 100 20" preserveAspectRatio="none">
+              <path d="M 0,10 Q 25,0 50,10 Q 75,20 100,10" />
+            </svg>
+          </span>
+        </h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text glass-panel tilt-card laser-border reveal reveal-delay-1">
+          <h3 class="panel-subtitle">At the Intersection of Business, Data & Finance</h3>
+          <p>
+            I am <strong>AYUSH</strong>, an undergraduate student pursuing a <strong>B.Com (Hons.) in Data Analytics</strong> at Guru Nanak Dev University and a <strong>BBA in Digital Business & Entrepreneurship</strong> at the Indian Institute of Management Bangalore (IIM Bangalore).
+          </p>
+          <p>
+            My core interest lies at the convergence of quantitative analytics, corporate finance, and business strategy. I focus on understanding operational mechanics, identifying financial expansion pathways, and translating raw data into defensible, high-leverage strategic decisions.
+          </p>
+          <p>
+            Through national case competitions and real-world engagements, I have built practical frameworks across financial expansion modelling, CapEx structuring, and customer acquisition. One of my key milestones was qualifying as a <strong>Top 10 Finalist in the MITTI Café Case Competition</strong>, presenting live at the offline finals at IIM Bangalore.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Dual Academic Foundation:</strong> Blending quantitative analytics & statistics (GNDU) with executive business strategy & digital enterprise models (IIM Bangalore).</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Practical Financial Modeling:</strong> Experience in CapEx planning, unit economics, POS-linked debt deduction structures, and WDV depreciation.</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Leadership & Execution:</strong> Former House Captain and NCC 'A' Certificate holder with Alpha Grade.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-details-cards">
+          <div class="detail-card glass-panel tilt-card laser-border reveal reveal-delay-1">
+            <div class="detail-icon"><i class="fa-solid fa-chart-pie"></i></div>
+            <h4>Business & Data Analytics</h4>
+            <p>Database queries (SQL & DBMS), data visualization (Power BI & Tableau), statistical analysis, and predictive decision frameworks.</p>
+          </div>
+          <div class="detail-card glass-panel tilt-card laser-border reveal reveal-delay-2">
+            <div class="detail-icon"><i class="fa-solid fa-coins"></i></div>
+            <h4>Financial Modelling</h4>
+            <p>CapEx evaluation, cash-flow retention models, POS-linked debt settlements, and Written Down Value (WDV) asset depreciation.</p>
+          </div>
+          <div class="detail-card glass-panel tilt-card laser-border reveal reveal-delay-3">
+            <div class="detail-icon"><i class="fa-solid fa-compass"></i></div>
+            <h4>Strategic Planning</h4>
+            <p>Market segmentation, customer positioning, operating models (Hosted vs. Independent Cafés), and sustainable business growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Academic Trajectory</span>
+        <h2 class="section-title">Education & Programmes</h2>
+      </div>
+
+      <div class="education-grid">
+        <!-- IIM Bangalore -->
+        <div class="education-card glass-panel tilt-card laser-border reveal reveal-delay-1">
+          <div class="edu-badge">Premier Management Institution</div>
+          <div class="edu-header">
+            <div>
+              <h3 class="edu-inst">Indian Institute of Management Bangalore</h3>
+              <p class="edu-degree">BBA in Digital Business & Entrepreneurship (DBE)</p>
+            </div>
+            <div class="edu-period">2026 onwards • Currently Pursuing</div>
+          </div>
+          <p class="edu-desc">
+            Rigorous management programme focusing on contemporary digital business models, venture scalability, financial viability, and data-informed decision frameworks.
+          </p>
+          <div class="edu-curriculum">
+            <h4>Key Focus Areas & Modules:</h4>
+            <div class="curriculum-tags">
+              <span>Customer Behaviour</span>
+              <span>Market Segmentation</span>
+              <span>Targeting & Positioning</span>
+              <span>Points of Parity & Difference</span>
+              <span>Perceptual Mapping</span>
+              <span>Digital Business Strategy</span>
+              <span>E-Commerce Operations</span>
+              <span>Customer Acquisition</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guru Nanak Dev University -->
+        <div class="education-card glass-panel tilt-card laser-border reveal reveal-delay-2">
+          <div class="edu-badge">Specialized Quantitative Commerce</div>
+          <div class="edu-header">
+            <div>
+              <h3 class="edu-inst">Guru Nanak Dev University (GNDU)</h3>
+              <p class="edu-degree">B.Com (Hons.) in Data Analytics</p>
+            </div>
+            <div class="edu-period">2026 onwards • Currently Pursuing</div>
+          </div>
+          <p class="edu-desc">
+            Integrated quantitative degree combining traditional commercial accounting, corporate finance, and business statistics with applied analytics tools and data manipulation techniques.
+          </p>
+          <div class="edu-curriculum">
+            <h4>Coursework Modules:</h4>
+            <div class="curriculum-tags">
+              <span>Advanced Excel</span>
+              <span>DBMS & SQL</span>
+              <span>Business Statistics</span>
+              <span>Mathematics for Decisions</span>
+              <span>Data Visualisation (Power BI)</span>
+              <span>Business Analytics (Tableau)</span>
+              <span>Python in Business</span>
+              <span>Stock Market Analysis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Class XII Commerce -->
+        <div class="education-card glass-panel tilt-card laser-border reveal reveal-delay-3">
+          <div class="edu-badge">Academic Excellence</div>
+          <div class="edu-header">
+            <div>
+              <h3 class="edu-inst">The Senior Study, Amritsar</h3>
+              <p class="edu-degree">Class XII — CBSE Commerce Stream</p>
+            </div>
+            <div class="edu-period">Completed 2025 • 80.12%</div>
+          </div>
+          <p class="edu-desc">
+            Strong foundational grounding in Financial Accounting, Business Studies, Economics, and Quantitative Methods. Best of six subjects: 80.12%.
+          </p>
+          <div class="edu-curriculum">
+            <h4>Highlights:</h4>
+            <div class="curriculum-tags">
+              <span>CBSE Commerce: 80.12%</span>
+              <span>Accountancy</span>
+              <span>Business Studies</span>
+              <span>Economics</span>
+              <span>House Captain (2025)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects & Case Studies Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Case Competitions & Practical Work</span>
+        <h2 class="section-title">
+          Featured 
+          <span class="highlight-word">
+            Work
+            <svg class="wavy-underline" viewBox="0 0 120 20" preserveAspectRatio="none">
+              <path d="M 0,10 Q 30,0 60,10 Q 90,20 120,10" />
+            </svg>
+          </span>
+        </h2>
+        
+        <!-- Filter Tabs -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="case-study">Case Competitions</button>
+          <button class="filter-btn" data-filter="initiative">Initiatives</button>
+          <button class="filter-btn" data-filter="research">Research</button>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Flagship Case Study: MITTI Compass -->
+        <div class="featured-case-card glass-panel laser-border reveal reveal-delay-1" data-project="mitti" data-category="case-study">
+          <div class="case-header-row">
+            <div class="case-meta">
+              <span class="status-pill highlight">Top 10 Finalist • National Round</span>
+              <span class="meta-inst"><i class="fa-solid fa-building-columns"></i> IIM Bangalore Offline Finals</span>
+              <span class="meta-date"><i class="fa-regular fa-calendar"></i> 14 November 2026</span>
+            </div>
+            <div class="case-role-tag">Role: Marketing & Financial Modelling (Team of 5)</div>
+          </div>
+
+          <h3 class="case-title">MITTI Compass: Sustainable Social Enterprise Expansion</h3>
+          <p class="case-overview">
+            National finalist strategic blueprint for MITTI Café — a social enterprise employing persons with disabilities. The objective was to design a scalable commercial expansion model across corporate and campus locations without exposing the enterprise to punitive commercial rental debt or mission drift.
+          </p>
+
+          <div class="case-breakdown-grid">
+            <div class="case-column">
+              <h4>01. Strategic Problem Context</h4>
+              <p>
+                How to scale café presence across metro corporate hubs while avoiding heavy commercial rent liabilities, mitigating high upfront CapEx, and preserving the brand's core mission of dignified employment for persons with disabilities.
+              </p>
+              <div class="case-metric-box danger">
+                <span>Core Challenge</span>
+                <strong>Commercial Rents & Fixed Debt Risk</strong>
+              </div>
+            </div>
+
+            <div class="case-column">
+              <h4>02. Financial & Strategic Architecture</h4>
+              <ul>
+                <li><strong>Mobile Cart CapEx:</strong> Modeled ₹2,50,000 unit costs for rapid deployment in corporate tech complexes and academic institutions.</li>
+                <li><strong>Automated POS Debt Deduction:</strong> Modeled ₹2,500 monthly recovery tied to daily Point-of-Sale receipts, achieving 98.4% modeled debt recovery with zero fixed-default risk.</li>
+                <li><strong>Institutional Hosted Model:</strong> 60–70% corporate-hosted café ratio to eliminate expensive commercial real estate rentals.</li>
+                <li><strong>Prudent Depreciation:</strong> 20% Written Down Value (WDV) method applied with ring-fenced operational risk governance.</li>
+                <li><strong>Inclusive Brand Narrative:</strong> Inclusive superhero comic mascot concepts and mobile cart pop-ups.</li>
+              </ul>
+            </div>
+
+            <div class="case-column">
+              <h4>03. Measurable Outcomes & Recognition</h4>
+              <div class="kpi-group">
+                <div class="kpi-item">
+                  <span class="kpi-val">Top 10</span>
+                  <span class="kpi-label">National Finalist</span>
+                </div>
+                <div class="kpi-item">
+                  <span class="kpi-val">98.4%</span>
+                  <span class="kpi-label">Debt Recovery Rate</span>
+                </div>
+                <div class="kpi-item">
+                  <span class="kpi-val">₹0 Rent</span>
+                  <span class="kpi-label">Hosted Partnerships</span>
+                </div>
+              </div>
+              <p class="case-result-text">
+                Shortlisted among the Top 10 teams nationally and presented before faculty and industry evaluators at the offline finals at IIM Bangalore.
+              </p>
+              <button class="btn btn-sm btn-primary open-modal-btn" data-project="mitti">
+                <i class="fa-solid fa-circle-info"></i> View Complete Case Model
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Independent Accountancy Tutoring -->
+        <div class="project-card glass-panel tilt-card laser-border reveal reveal-delay-2" data-project="tutoring" data-category="initiative">
+          <div class="project-image-box">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80" alt="Independent Accountancy Tutoring" class="project-img">
+            <div class="project-badge">Independent Initiative</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Independent Accountancy Tutoring Service</h3>
+            <p class="project-desc">
+              Managing an independent tutoring initiative delivering focused Accountancy instruction for senior secondary commerce students. Responsible for pedagogy, student mentorship, and operational cash-flow management.
+            </p>
+            <div class="tech-tags">
+              <span class="tag">Financial Accounting</span>
+              <span class="tag">Student Mentorship</span>
+              <span class="tag">Operations & Fees</span>
+            </div>
+            <div class="project-links">
+              <button class="btn-text open-modal-btn" data-project="tutoring">
+                <i class="fa-solid fa-circle-info"></i> View Initiative Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Interoperability Research -->
+        <div class="project-card glass-panel tilt-card laser-border reveal reveal-delay-3" data-project="interop" data-category="research">
+          <div class="project-image-box">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Governance Research" class="project-img">
+            <div class="project-badge">Case Competition Research</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Interoperability & Accountability Frameworks</h3>
+            <p class="project-desc">
+              Synthesised research on institutional coordination mechanisms, interoperability standards, and accountability frameworks to formulate structured, evidence-backed policy recommendations.
+            </p>
+            <div class="tech-tags">
+              <span class="tag">Research Synthesis</span>
+              <span class="tag">Governance Models</span>
+              <span class="tag">Structured Argumentation</span>
+            </div>
+            <div class="project-links">
+              <button class="btn-text open-modal-btn" data-project="interop">
+                <i class="fa-solid fa-circle-info"></i> View Research Brief
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership & Co-Curricular Excellence -->
+  <section id="leadership" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Responsibility & Discipline</span>
+        <h2 class="section-title">Leadership & Discipline</h2>
+      </div>
+
+      <div class="leadership-grid">
+        <!-- House Captain -->
+        <div class="bento-card glass-panel tilt-card laser-border reveal reveal-delay-1">
+          <div class="bento-header">
+            <div class="bento-icon"><i class="fa-solid fa-users"></i></div>
+            <span class="bento-chip">Elected Position • 2025</span>
+          </div>
+          <h3 class="bento-title">House Captain — The Senior Study</h3>
+          <p class="bento-desc">
+            Led and coordinated house initiatives, inter-school cultural, debate and athletic contingents, fostering teamwork, conflict resolution, and student representation.
+          </p>
+          <div class="bento-pills">
+            <span class="pill"><i class="fa-solid fa-check"></i> Team Leadership</span>
+            <span class="pill"><i class="fa-solid fa-check"></i> Event Coordination</span>
+            <span class="pill"><i class="fa-solid fa-check"></i> Student Representation</span>
+          </div>
+        </div>
+
+        <!-- NCC A Certificate -->
+        <div class="bento-card glass-panel tilt-card laser-border reveal reveal-delay-2">
+          <div class="bento-header">
+            <div class="bento-icon"><i class="fa-solid fa-medal"></i></div>
+            <span class="bento-chip highlight">Alpha Grade • 2023</span>
+          </div>
+          <h3 class="bento-title">National Cadet Corps (NCC) — A Certificate</h3>
+          <p class="bento-desc">
+            Completed three years of structured cadet training across Classes VIII through X. Successfully attained the prestigious <strong>A Certificate with Alpha Grade</strong> in 2023, building deep operational discipline, endurance, and team cohesion.
+          </p>
+          <div class="bento-pills">
+            <span class="pill"><i class="fa-solid fa-star"></i> Alpha Grade</span>
+            <span class="pill"><i class="fa-solid fa-shield-halved"></i> Structured Discipline</span>
+            <span class="pill"><i class="fa-solid fa-flag"></i> Civic Responsibility</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Inventory Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Capabilities</span>
+        <h2 class="section-title">Skills & Toolset</h2>
+        <p class="section-subtitle">
+          A transparent breakdown of practical competencies, conceptual knowledge, and developing technical capabilities.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Finance & Accounting -->
+        <div class="skill-category glass-panel tilt-card laser-border reveal reveal-delay-1">
+          <div class="skill-cat-header">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <h3>Finance & Accounting</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-badge"><i class="fa-solid fa-calculator"></i> Financial Modelling Concepts</div>
+            <div class="skill-badge"><i class="fa-solid fa-arrow-trend-up"></i> Revenue & Cost Analysis</div>
+            <div class="skill-badge"><i class="fa-solid fa-truck-ramp-box"></i> CapEx Evaluation</div>
+            <div class="skill-badge"><i class="fa-solid fa-chart-line"></i> Depreciation (WDV Method)</div>
+            <div class="skill-badge"><i class="fa-solid fa-money-bill-wave"></i> POS-Linked Settlement Models</div>
+            <div class="skill-badge"><i class="fa-solid fa-shield-halved"></i> Financial Risk Assessment</div>
+          </div>
+        </div>
+
+        <!-- Business Strategy & Marketing -->
+        <div class="skill-category glass-panel tilt-card laser-border reveal reveal-delay-2">
+          <div class="skill-cat-header">
+            <i class="fa-solid fa-bullseye"></i>
+            <h3>Business Strategy & Marketing</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-badge"><i class="fa-solid fa-compass"></i> Market Segmentation & STP</div>
+            <div class="skill-badge"><i class="fa-solid fa-user-group"></i> Consumer Behaviour Analysis</div>
+            <div class="skill-badge"><i class="fa-solid fa-map-location-dot"></i> Perceptual Mapping</div>
+            <div class="skill-badge"><i class="fa-solid fa-store"></i> E-Commerce Business Models</div>
+            <div class="skill-badge"><i class="fa-solid fa-bullhorn"></i> Brand Differentiation</div>
+            <div class="skill-badge"><i class="fa-solid fa-lightbulb"></i> Social Entrepreneurship</div>
+          </div>
+        </div>
+
+        <!-- Quantitative Analytics & Tools -->
+        <div class="skill-category glass-panel tilt-card laser-border reveal reveal-delay-3">
+          <div class="skill-cat-header">
+            <i class="fa-solid fa-database"></i>
+            <h3>Data Analytics & Software</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-badge"><i class="fa-solid fa-table"></i> Advanced Excel (Formulas, Lookups)</div>
+            <div class="skill-badge"><i class="fa-solid fa-server"></i> SQL & Relational DBMS</div>
+            <div class="skill-badge"><i class="fa-solid fa-chart-column"></i> Power BI Visualisation</div>
+            <div class="skill-badge"><i class="fa-solid fa-chart-simple"></i> Tableau Analytics</div>
+            <div class="skill-badge"><i class="fa-brands fa-python"></i> Python for Business (Learning)</div>
+            <div class="skill-badge"><i class="fa-solid fa-robot"></i> AI Productivity & Decision Tools</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Focus Areas & Passions -->
+  <section id="interests" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Focus Areas</span>
+        <h2 class="section-title">Professional & Personal Interests</h2>
+      </div>
+
+      <div class="interests-tag-cluster reveal reveal-delay-1">
+        <div class="interest-pill"><i class="fa-solid fa-briefcase"></i> Business & Entrepreneurship</div>
+        <div class="interest-pill"><i class="fa-solid fa-chart-line"></i> Financial Modelling & Valuation</div>
+        <div class="interest-pill"><i class="fa-solid fa-building-columns"></i> Corporate Finance & Capital Markets</div>
+        <div class="interest-pill"><i class="fa-solid fa-bullseye"></i> Consumer Behaviour & STP Strategy</div>
+        <div class="interest-pill"><i class="fa-solid fa-database"></i> SQL, Database Management & Power BI</div>
+        <div class="interest-pill"><i class="fa-solid fa-trophy"></i> Business Case Competitions</div>
+        <div class="interest-pill"><i class="fa-solid fa-robot"></i> Generative AI & Productivity Tools</div>
+        <div class="interest-pill"><i class="fa-solid fa-handshake-angle"></i> Social Entrepreneurship</div>
+        <div class="interest-pill"><i class="fa-solid fa-dumbbell"></i> Fitness & Training</div>
+        <div class="interest-pill"><i class="fa-solid fa-graduation-cap"></i> IIM Bangalore & GNDU Community</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Let's Connect</span>
+        <h2 class="section-title">
+          Shall we 
+          <span class="highlight-word">
+            talk?
+            <svg class="wavy-underline" viewBox="0 0 100 20" preserveAspectRatio="none">
+              <path d="M 0,10 Q 25,0 50,10 Q 75,20 100,10" />
+            </svg>
+          </span>
+        </h2>
+        <p class="section-subtitle">
+          Always open for analyst internships, case competition collaborations, or an engaging discussion on finance and business strategy.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info glass-panel tilt-card laser-border reveal reveal-delay-1">
+          <h3 class="panel-subtitle">Reach out directly</h3>
+          <p>
+            I usually respond within a few hours. Feel free to copy my email or submit a message through the form.
+          </p>
+
+          <div class="contact-methods">
+            <div class="contact-method-item">
+              <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <span class="method-label">Location</span>
+                <span class="method-value">Amritsar, Punjab, India</span>
+              </div>
+            </div>
+
+            <!-- Email with One-Click Copy -->
+            <div class="contact-method-item clickable" id="copyContactEmailBox" title="Click to copy email">
+              <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <span class="method-label">Direct Email (Click to copy)</span>
+                <span class="method-value" id="contactEmailAddress">ayush23021@gmail.com</span>
+              </div>
+              <span class="copy-badge-pill" id="copyBadgePill"><i class="fa-solid fa-copy"></i> Copy</span>
+            </div>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-method-item">
+              <div class="method-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div>
+                <span class="method-label">LinkedIn</span>
+                <span class="method-value">linkedin.com/in/ayush</span>
+              </div>
+            </a>
+
+            <a href="https://github.com" target="_blank" rel="noopener" class="contact-method-item">
+              <div class="method-icon"><i class="fa-brands fa-github"></i></div>
+              <div>
+                <span class="method-label">GitHub</span>
+                <span class="method-value">github.com/ayush</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-container glass-panel tilt-card laser-border reveal reveal-delay-2">
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="E.g. Recruiter / Collaborator" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Hi Ayush, let's connect regarding..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block laser-btn" id="sendMessageBtn">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+            <div id="formStatus" class="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Floating Theme Accent Switcher -->
+  <aside class="theme-switcher glass-panel" aria-label="Theme color switcher">
+    <span class="theme-label"><i class="fa-solid fa-palette"></i> Glow:</span>
+    <div class="color-swatches">
+      <button class="color-dot active" data-theme="cyan" title="Cyber Cyan" style="background: #38bdf8;"></button>
+      <button class="color-dot" data-theme="purple" title="Neon Purple" style="background: #c084fc;"></button>
+      <button class="color-dot" data-theme="emerald" title="Emerald" style="background: #34d399;"></button>
+      <button class="color-dot" data-theme="sunset" title="Sunset Gold" style="background: #fbbf24;"></button>
+    </div>
+  </aside>
+
+  <!-- Project Details Modal Popup -->
+  <div id="projectModal" class="project-modal-backdrop" aria-hidden="true">
+    <div class="project-modal-card glass-panel laser-border" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-body" id="modalContent">
+        <!-- Dynamically injected project details -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>© <span id="currentYear"></span> AYUSH • B.Com (Hons.) Data Analytics & BBA in Digital Business & Entrepreneurship • Amritsar, Punjab.</p>
+      <a href="#hero" class="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
